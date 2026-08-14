@@ -31,7 +31,7 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ github.sha }},ghcr.io/${{ github.repository }}:latest
-      - uses: aquasecurity/trivy-action@0.28.0
+      - uses: aquasecurity/trivy-action@v0.36.0
         with: {image-ref: 'ghcr.io/${{ github.repository }}:${{ github.sha }}', severity: 'CRITICAL,HIGH', ignore-unfixed: true}
   deploy:
     if: github.event_name == 'workflow_dispatch'
